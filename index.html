@@ -15,19 +15,25 @@
   </div>
   <div class="main">
     <div class="control-pannel">
-      <div>
+      <div id="sizing-container">
         <label for="gridSize"> Grid size: </label>
         <input type="range" id="grid-slider" name="grid-slider" min="16" max="64">
       </div>
       <div>
-        <input type="button" id="rainbow-button" class="button" value="Rainbow Mode">
+        <input type="button" id="rainbow-button" class="button" value="Rainbow Mode" onclick="this.classList.toggle('active')">
+      </div>
+      <div>
+        <input type="button" id="eraser" class="button" value="Eraser" onclick="this.classList.toggle('active')">
+      </div>
+      <div>
+        <input type="button" id="clear" class="button" value="Clear board">
       </div>
     </div>
     <div class="board">
     </div>
   </div>
   <div class="footer">
-    <h6> OlliePreiss TM </h6>
+    <h6> Copyright @ OlliePreiss 2023 https://github.com/OlliePreiss </h6>
   </div>
 </body>
 </html>

@@ -3,6 +3,7 @@ const DEFAULT_PEN_COLOR = '#000000';
 
 let mouseDown = 0;
 let rainbowMode = 0;
+let eraserMode = 0;
 let gridSize =  DEFAULT_GRID_SIZE;
 let penColor = DEFAULT_PEN_COLOR;
 
@@ -10,6 +11,8 @@ const board = document.querySelector(".board");
 const tiles = document.querySelectorAll(".tile");
 const gridSlider = document.querySelector("#grid-slider");
 const rainbowButton = document.querySelector("#rainbow-button")
+const eraserButton = document.querySelector("#eraser")
+const clearButton = document.querySelector("#clear")
 
 document.addEventListener("DOMContentLoaded", createGrid(gridSize))
 
@@ -23,7 +26,14 @@ document.body.onmouseup = function() {
 
 board.addEventListener("mouseover", (e) => {
   if (e.target.classList.contains('tile') && (mouseDown === 1)) {
-    e.target.style.backgroundColor = penColor;
+      if (rainbowMode == 1) {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16)
+        e.target.style.backgroundColor = "#"+randomColor;
+      } else if (eraserMode == 1) {
+        e.target.style.backgroundColor = "white";
+      } else {
+        e.target.style.backgroundColor = penColor;
+      }
   }
 })
 
@@ -35,6 +45,19 @@ gridSlider.addEventListener("mouseup", () => {
 
 rainbowButton.addEventListener("click", () => {
   rainbowMode == 0 ? rainbowMode = 1 : rainbowMode = 0;
+  eraserMode = 0;
+  eraserButton.classList.remove('active');
+})
+
+eraserButton.addEventListener("click", () => {
+  eraserMode == 0 ? eraserMode = 1 : eraserMode = 0;
+  rainbowMode = 0;
+  rainbowButton.classList.remove('active')
+})
+
+clearButton.addEventListener("click", () => {
+  clearGrid();
+  createGrid(gridSize);
 })
 
 function clearGrid() {

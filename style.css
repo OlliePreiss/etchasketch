@@ -1,7 +1,10 @@
+body {
+  background-color:ghostwhite;
+}
+
 .header {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: beige;
   padding: 25px;
 }
 
@@ -19,6 +22,7 @@
   display: flex;
   flex-direction: column;
   flex: 0 1 auto;
+  border: 1px solid lightgrey;
 }
 
 .row {
@@ -27,8 +31,8 @@
 }
 
 .tile {
-  border: 1px solid lightgrey;
   flex: 1;
+  background-color: white;
 }
 
 .tile:hover {
@@ -36,7 +40,35 @@
 }
 
 .control-pannel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+}
 
+.button {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid grey;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight:300;
+  background-color: white;
+  color:grey;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  color:#000000;
+  border:0.1em solid black;
+}
+
+.button.active {
+  background-color: black;
+  color: white;
 }
 
 .footer {
@@ -46,6 +78,15 @@
   text-align: center;
   vertical-align: middle;
   background-color: darkgray;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+}
+
+.footer h6 {
+  padding: 0px;
+  margin: 0px;
 }
 
 @media (max-width: 400px ) {
