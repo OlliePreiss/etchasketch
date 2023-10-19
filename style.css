@@ -1,10 +1,13 @@
-body {
-  background-color:ghostwhite;
+body, html {
+  background-image: linear-gradient(to bottom right, rgb(212, 252, 243), ghostwhite);
+  background-size: cover;
+  height: 100%;;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 25px;
 }
 
@@ -23,6 +26,7 @@ body {
   flex-direction: column;
   flex: 0 1 auto;
   border: 1px solid lightgrey;
+  box-shadow: 0px 0px 20px rgb(135, 135, 135);
 }
 
 .row {
@@ -48,7 +52,8 @@ body {
 
 .button {
   display:inline-block;
-  padding:0.35em 1.2em;
+  width: 100%;
+  padding:1em 1.2em;
   border:0.1em solid grey;
   margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
@@ -59,6 +64,8 @@ body {
   color:grey;
   text-align:center;
   transition: all 0.2s;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .button:hover {
@@ -77,11 +84,11 @@ body {
   margin: 0px;
   text-align: center;
   vertical-align: middle;
-  background-color: darkgray;
   position: absolute;
   left: 0;
   bottom: 0px;
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 .footer h6 {

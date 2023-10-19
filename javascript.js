@@ -13,6 +13,7 @@ const gridSlider = document.querySelector("#grid-slider");
 const rainbowButton = document.querySelector("#rainbow-button")
 const eraserButton = document.querySelector("#eraser")
 const clearButton = document.querySelector("#clear")
+const sizingContainer = document.querySelector("#sizing-container")
 
 document.addEventListener("DOMContentLoaded", createGrid(gridSize))
 
